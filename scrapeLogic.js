@@ -15,6 +15,8 @@ const scrapeLogic = async (res, url) => {
         : puppeteer.executablePath(),
   });
   try {
+    const page = await browser.newPage();
+
     // Navigate to the specified URL
     await page.goto(url, { waitUntil: "networkidle2" });
 
