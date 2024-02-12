@@ -20,8 +20,8 @@ const scrapeLogic = async (res, url) => {
     // Navigate to the specified URL
     await page.goto(url, { waitUntil: "networkidle2" });
 
-    // Take a screenshot
-    const screenshotBuffer = await page.screenshot();
+    // Take a full page screenshot
+    const screenshotBuffer = await page.screenshot({ fullPage: true });
 
     // Close the browser
     await browser.close();
